@@ -1,7 +1,15 @@
 import 'package:chat_app/screens/auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+// import 'firebase_options.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    // options: DefaultFirebaseOptions.currentPlatform,
+    // demoProjectId: "com.example.chat_app",
+  );
   runApp(const App());
 }
 
@@ -14,7 +22,7 @@ class App extends StatelessWidget {
       title: 'ChatApp',
       theme: ThemeData().copyWith(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 73, 7, 88),
+          seedColor: const Color.fromARGB(255, 35, 12, 138),
         ),
       ),
       home: AuthScreen(),
