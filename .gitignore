@@ -1,45 +1,79 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
+# ---------- OS junk ----------
 .DS_Store
-.atom/
-.build/
-.buildlog/
-.history
-.svn/
-.swiftpm/
-migrate_working_dir/
+Thumbs.db
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
+# ---------- IDE / Editors ----------
 .idea/
+.vscode/
+*.iml
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
-
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
+# ---------- Flutter / Dart ----------
 .dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
+.packages
 .pub-cache/
 .pub/
-/build/
+.buildlog/
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-versions
+.metadata
+coverage/
+build/
 
-# Symbolication related
-app.*.symbols
+# ---------- Android ----------
+android/.gradle/
+android/captures/
+android/local.properties
+**/android/key.properties
+**/android/app/*.keystore
+**/android/app/*.jks
+# Firebase-конфиг Android
+ android/app/google-services.json
 
-# Obfuscation related
-app.*.map.json
+# ---------- iOS / macOS ----------
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/DerivedData/
+**/ios/**/*.xcuserdatad
+**/ios/**/*.xcworkspace/xcuserdata
+**/macos/Pods/
+**/macos/DerivedData/
+**/macos/**/*.xcuserdatad
+**/macos/**/*.xcworkspace/xcuserdata
+#  Firebase-конфиг iOS/macOS
+ios/Runner/GoogleService-Info.plist
+macos/Runner/GoogleService-Info.plist
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+# ---------- Firebase (эмуляторы, логи, ключи) ----------
+.firebase/
+firebase-debug.log
+firestore-debug.log
+database-debug.log
+storage-debug.log
+ui-debug.log
+pubsub-debug.log
+# Данные эмуляторов
+**/firebase/emulators/**
+# Локальные рантайм-настройки функций/эмулей
+.runtimeconfig.json
+# СЕКРЕТНЫЕ ключи сервис-аккаунтов — никогда не коммитить
+**/*serviceAccount*.json
+**/*-adminsdk*.json
+**/*.p12
+**/*.pem
+
+# ---------- Cloud Functions (если используешь) ----------
+functions/node_modules/
+functions/.firebase/
+functions/lib/
+functions/.env.local
+functions/.env
+functions/.env.*
+functions/*.log
+
+# ---------- Misc ----------
+*.log
+*.zip
+*.tar
+*.gz
