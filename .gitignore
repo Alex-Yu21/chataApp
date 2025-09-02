@@ -57,13 +57,14 @@ pubsub-debug.log
 **/firebase/emulators/**
 # Локальные рантайм-настройки функций/эмулей
 .runtimeconfig.json
-# СЕКРЕТНЫЕ ключи сервис-аккаунтов — никогда не коммитить
+# СЕКРЕТНЫЕ ключи сервис-аккаунтов 
 **/*serviceAccount*.json
 **/*-adminsdk*.json
 **/*.p12
 **/*.pem
+lib/firebase_options.dart
 
-# ---------- Cloud Functions (если используешь) ----------
+# ---------- Cloud Functions  ----------
 functions/node_modules/
 functions/.firebase/
 functions/lib/
