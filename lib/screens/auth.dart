@@ -129,25 +129,26 @@ class _AuthScreenState extends State<AuthScreen> {
                               _enteredEmail = value!;
                             },
                           ),
-                          TextFormField(
-                            decoration: const InputDecoration(
-                              labelText: 'Username',
+                          if (!_isLogin)
+                            TextFormField(
+                              decoration: const InputDecoration(
+                                labelText: 'Username',
+                              ),
+                              enableSuggestions: false,
+                              keyboardType: TextInputType.name,
+                              autocorrect: false,
+                              validator: (value) {
+                                if (value == null ||
+                                    value.trim().isEmpty ||
+                                    value.trim().length < 4) {
+                                  return 'Username must be at least 4 characters long';
+                                }
+                                return null;
+                              },
+                              onSaved: (value) {
+                                _enteredUsername = value!;
+                              },
                             ),
-                            enableSuggestions: false,
-                            keyboardType: TextInputType.name,
-                            autocorrect: false,
-                            validator: (value) {
-                              if (value == null ||
-                                  value.trim().isEmpty ||
-                                  value.trim().length < 4) {
-                                return 'Username must be at least 4 characters long';
-                              }
-                              return null;
-                            },
-                            onSaved: (value) {
-                              _enteredUsername = value!;
-                            },
-                          ),
                           TextFormField(
                             decoration: InputDecoration(labelText: 'Password'),
                             obscureText: true,
